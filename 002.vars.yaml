@@ -15,5 +15,5 @@
 
     - name: Printing url form task
       ansible.builtin.debug:
-        msg: {{CITY}}
+        msg: "{{CITY}}"
 
