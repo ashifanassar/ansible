@@ -1,4 +1,4 @@
-- name: Play1
+- name: Demo on vars
   hosts: all
   vars:
     URL: play.google.com
@@ -6,3 +6,9 @@
     - name: Printing url
       ansible.builtin.debug:
         msg: "Value of url is {{URL}}" #printing the variable
+
+    - name: Printing url form task
+      ansible.builtin.debug:
+        msg: "Value of url is {{URL}}" #printing the variable
+      vars:
+        URL: task.google.com
