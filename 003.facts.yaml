@@ -1,2 +1,25 @@
 # What is a FACT ?
 # A fact nothing but the properties of the VM's.
+- name: Demo on vars
+  hosts: all
+  vars:
+    URL: play.google.com
+    gather_facts: false
+  tasks:
+    - name: Printing url
+      ansible.builtin.debug:
+        msg: "Value of url is {{URL}}" #printing the variable
+
+    - name: Printing url form task
+      ansible.builtin.debug:
+        msg: "Value of url is {{URL}}" #printing the variable
+      vars:
+        URL: task.google.com
+
+    - name: Printing url form task
+      ansible.builtin.debug:
+        msg: "{{CITY}}"
+
+    - name: Printing DiMy D0 Distro is
+      ansible.builtin.debug:
+        msg: My D0 Distro is {{ansible_distribution}}
