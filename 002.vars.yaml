@@ -2,7 +2,7 @@
   hosts: all
   vars:
     URL: play.google.com
-    gather_facts: false 
+  gather_facts: false 
   tasks:
     - name: Printing url
       ansible.builtin.debug:
