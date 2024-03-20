@@ -2,6 +2,7 @@
   hosts: all
   vars:
     URL: play.google.com
+    gather_facts: false 
   tasks:
     - name: Printing url
       ansible.builtin.debug:
@@ -17,3 +18,6 @@
       ansible.builtin.debug:
         msg: "{{CITY}}"
 
+    - name: Printing DiMy D0 Distro is
+      ansible.builtin.debug:
+        msg: My D0 Distro is {{ansible_distribution}}
