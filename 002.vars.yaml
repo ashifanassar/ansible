@@ -1,8 +1,7 @@
 - name: Demo on vars
   hosts: all
   vars:
-    URL: play.google.com
-  gather_facts: false 
+    URL: play.google.com 
   tasks:
     - name: Printing url
       ansible.builtin.debug:
