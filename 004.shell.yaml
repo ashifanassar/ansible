@@ -8,5 +8,13 @@
     - name: To print the result of the shell command
       ansible.builtin.debug: 
         msg: "uptime is {{OUT.stdout}}"
-    
+
+    - name: Capturing the bash exit code
+      ansible.builtin.set_fact:
+        EXITCODE: "{{OUT.rc}}"
+
+    - name: Capturing the bash exit code
+      ansible.builtin.debug:
+      msg: "Exit code is {{EXITCODE}}"
+
     
