@@ -2,6 +2,6 @@
   hosts: all
   tasks:
     - name: Running uptime on the machine
-    ansible.builtin.shell: uptime
+      ansible.builtin.shell: uptime
     
     
