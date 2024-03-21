@@ -15,6 +15,6 @@
 
     - name: Capturing the bash exit code
       ansible.builtin.debug:
-      msg: "Exit code is {{EXITCODE}}"
+        msg: "Exit code is {{EXITCODE}}"
 
     
