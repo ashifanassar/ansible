@@ -7,14 +7,14 @@
       state: present
 
 # This uses a variable as this changes per distribution.
-- name: Remove the package
-  ansible.builtin.package:
-    name: "{{ nginx }}"
-    state: absent
+  - name: Remove the package
+    ansible.builtin.package:
+      name: "{{ nginx }}"
+      state: absent
 
-- name: Install the latest version of wget and jq
-  ansible.builtin.package:
-    name:
-      - wget
-      - jq
-    state: latest
+  - name: Install the latest version of wget and jq
+    ansible.builtin.package:
+      name:
+        - wget
+        - jq
+      state: latest
