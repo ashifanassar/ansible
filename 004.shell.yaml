@@ -1,7 +1,7 @@
 - name: Demo on using shell module
   hosts: all
   tasks:
-    -name: Running uptime on the machine
+    - name: Running uptime on the machine
     ansible.builtin.shell: uptime
     
     
