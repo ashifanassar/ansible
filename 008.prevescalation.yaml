@@ -1,0 +1,15 @@
+- name: Demo on using shell Module  
+  hosts: all
+  become: yes # Run the playbook as the root user
+  tasks:
+    - name: Checking the user
+      ansible.builtin.shell: id
+      register: OUT
+
+    - name: Printing user details
+      ansible.builtin.debug:
+        msg: "user name is {{OUT.stdout}}"
+
+    - name: Creating the user details
+      ansible.builtin.user:
+        name: robot
