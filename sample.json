@@ -1,0 +1,10 @@
+{'changed': True, 'stdout': ' 11:09:50 up 1 day,  1:37,  1 user,  
+load average: 0.00, 0.00, 0.00', 
+'stderr': '', 
+'rc': 0, 
+'cmd': 'uptime', 
+'start': '2024-03-21 11:09:50.768947', 
+'end': '2024-03-21 11:09:50.775091', 
+'delta': '0:00:00.006144', 
+'msg': '', 
+'stdout_lines': [' 11:09:50 up 1 day,  1:37,  1 user,  load average: 0.00, 0.00, 0.00'], 'stderr_lines': [], 'failed': False}"

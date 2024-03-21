@@ -7,6 +7,6 @@
 
     - name: To print the result of the shell command
       ansible.builtin.debug: 
-        msg: "uptime is {{OUT}}"
+        msg: "uptime is {{OUT.stdout}}"
     
     
