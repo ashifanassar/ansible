@@ -1,0 +1,12 @@
+- name: Demo on vars
+  hosts: all
+  tasks:
+      - name: Printing DiMy D0 Distro is centos
+        ansible.builtin.debug:
+          msg: My D0 Distro is {{ansible_distribution}}
+        when: ansible_distribution == "centos"
+
+        - name: Printing DiMy D0 Distro is Ubuntu
+        ansible.builtin.debug:
+          msg: My D0 Distro is {{ansible_distribution}}
+        when: ansible_distribution == "ubuntu"
