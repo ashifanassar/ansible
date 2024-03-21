@@ -1,7 +1,7 @@
 - name: Demo on vars
   hosts: all
   vars:
-    action: false
+    action: true
   tasks:
       - name: Printing DiMy D0 Distro is centos
         ansible.builtin.debug:
@@ -18,3 +18,8 @@
         ansible.builtin.debug:
           msg: Action is defined
         when: action
+
+      - name: Bar is not defined
+        ansible.builtin.debug:
+          msg: Bar is not defined
+        when: bar is not defined
