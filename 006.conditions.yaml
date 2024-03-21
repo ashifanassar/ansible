@@ -1,5 +1,7 @@
 - name: Demo on vars
   hosts: all
+  vars:
+    action: true
   tasks:
       - name: Printing DiMy D0 Distro is centos
         ansible.builtin.debug:
@@ -10,3 +12,9 @@
         ansible.builtin.debug:
           msg: My D0 Distro is {{ansible_distribution}}
         when: ansible_distribution == "ubuntu"
+
+
+      - name: Run this action
+        ansible.builtin.debug:
+          msg: Action is defined
+        when: action
