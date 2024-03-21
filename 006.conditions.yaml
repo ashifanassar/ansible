@@ -22,4 +22,4 @@
       - name: Bar is defined
         ansible.builtin.debug:
           msg: Bar is defined
-        when: bar is defined
+        when: bar is  defined
