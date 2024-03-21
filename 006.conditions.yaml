@@ -1,7 +1,7 @@
 - name: Demo on vars
   hosts: all
   vars:
-    action: true
+    action: false
   tasks:
       - name: Printing DiMy D0 Distro is centos
         ansible.builtin.debug:
