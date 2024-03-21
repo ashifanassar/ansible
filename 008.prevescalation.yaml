@@ -5,6 +5,7 @@
     - name: Checking the user
       ansible.builtin.shell: id
       register: OUT
+      become_user: centos
 
     - name: Printing user details
       ansible.builtin.debug:
