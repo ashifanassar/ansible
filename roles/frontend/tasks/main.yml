@@ -27,11 +27,11 @@
     dest: /etc/nfinx/default.d/roboshop.conf
     remote_src: yes
 
-- name: Restarting {{COMPONENT}}
-  ansible.builtin.systemd_service:
-    state: restarted
-    name: nginx
-    enabled: yes
+# - name: Restarting {{COMPONENT}}
+#   ansible.builtin.systemd_service:
+#     state: restarted
+#     name: nginx
+#     enabled: yes
     # daemon_reload: true
 
 
