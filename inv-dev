@@ -1,8 +1,2 @@
 [frontend]
 frontend-dev.roboshopshopping
-
-[mongodb]
-mongo-dev.roboshopshopping
-
-[catalogue]
-catalogue-dev.roboshopshopping
