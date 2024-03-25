@@ -1,5 +1,8 @@
 [frontend]
-54.145.215.115
+frontend-dev.roboshopshopping
 
 [mongodb]
-3.84.147.124
+mongo-dev.roboshopshopping
+
+[catalogue]
+catalogue-dev.roboshopshopping
