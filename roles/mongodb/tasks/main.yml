@@ -25,7 +25,7 @@
   ansible.builtin.systemd_service:
     state: started
     name: mongod
-    enabled: yes 
+    enabled: true 
     daemon_reload: yes
 
 
