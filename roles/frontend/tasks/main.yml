@@ -4,11 +4,6 @@
     state: present 
 
 
-- name: starting the {{COMPONENT}}
-  ansible.builtin.systemd_service:
-    name: nginx
-    state: started
-    enabled: true
 
 - name: Download and extract {{COMPONENT}}
   ansible.builtin.unarchive:
@@ -32,7 +27,11 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-
+- name: Restarting {{COMPONENT}}
+  ansible.builtin.systemd_service:
+    state: restarted
+    name: nginx
+    enabled: true
     
 
 - name: Configuring Server Name 
