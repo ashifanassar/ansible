@@ -2,7 +2,6 @@
   ansible.builtin.shell: dnf module disable nodejs -y ;  dnf module enable nodejs:18 -y
 
 
-
 - name: Installing NodeJS
   ansible.builtin.dnf:
     name: nodejs 
@@ -49,7 +48,7 @@
     state: restarted
     name: "{{COMPONENT}}"
     enabled: yes
-    # daemon_reload: true
+
 
 - name: Configuring Server Name 
   ansible.builtin.shell: set-hostname {{COMPONENT}} 
