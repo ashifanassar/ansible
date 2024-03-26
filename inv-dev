@@ -1,2 +1,5 @@
 [frontend]
 frontend-dev.roboshopshopping
+
+[mongodb]
+mongo-dev.roboshopshopping
