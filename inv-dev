@@ -2,7 +2,7 @@
 frontend-dev.roboshopshopping
 
 [mongodb]
-mongo-dev.roboshopshopping
+mongodb-dev.roboshopshopping
 
 [catalogue]
 catalogue-dev.roboshopshopping
