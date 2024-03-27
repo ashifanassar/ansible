@@ -10,7 +10,7 @@
     state: present
 
 - name: Starting {{COMPONENT}}
-  ansible.builtin.systemd_service:
+  ansible.builtin.service:
     state: started
     name: rabbitmq-server
     enabled: yes 
