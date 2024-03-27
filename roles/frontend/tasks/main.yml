@@ -25,12 +25,12 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Restarting {{COMPONENT}}
-  ansible.builtin.systemd_service:
-    state: restarted
+- name: Enable service httpd, and not touch the state
+  ansible.builtin.service:
     name: nginx
     enabled: yes
-    # daemon_reload: true
+    state: restarted
+
 
 - name: Configuring Server Name 
   ansible.builtin.shell: set-hostname {{COMPONENT}}
