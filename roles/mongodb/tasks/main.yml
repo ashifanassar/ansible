@@ -8,12 +8,11 @@
     name: mongodb-org
     state: present
 
-#installing the mongo shell
+# Installing mongodShell
 - name: Installing {{COMPONENT}}
   ansible.builtin.dnf:
     name: mongodb-org-shell
     state: installed
-
 
 - name: Enabling {{COMPONENT}} visibility
   ansible.builtin.replace:
@@ -25,9 +24,8 @@
   ansible.builtin.service:
     state: started
     name: mongod
-    enabled: true 
+    enabled: yes 
     daemon_reload: yes
-
 
 - name: Download and extract {{COMPONENT}} Schema
   ansible.builtin.unarchive:
@@ -35,18 +33,8 @@
     dest: /tmp
     remote_src: yes
 
-- name: Injecting Users & Catalogue Schema 
-  community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/{{item}}.js"
-    idempotent: yes
-    login_host: "mongodb-dev.roboshopshopping"
-  loop: 
-    - users
-    - catalogue
-
-
 - name: loading catalogue data
-  ansible.builtin.shell: mongo --host mongodb-dev.roboshopshopping < /tmp/mongodb-main/{{item}}.js
+  ansible.builtin.shell: mongo --host mongodb-dev.roboshopshopping< /tmp/mongodb-main/{{item}}.js
   loop:
       - catalogue
       - users
