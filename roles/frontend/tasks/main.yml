@@ -25,7 +25,7 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Enable service httpd, and not touch the state
+- name: Restarting {{COMPONENT}}
   ansible.builtin.service:
     name: nginx
     enabled: yes
