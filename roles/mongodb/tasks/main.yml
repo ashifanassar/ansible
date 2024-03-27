@@ -39,14 +39,14 @@
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/{{item}}.js"
     idempotent: yes
-    login_host: "mongodb-dev.roboshop.internal"
+    login_host: "mongodb-dev.roboshopshopping"
   loop: 
     - users
     - catalogue
 
 
 - name: loading catalogue data
-  ansible.builtin.shell: mongo --host mongodb-{{ENV}}.roboshop.internal < /tmp/mongodb-main/{{item}}.js
+  ansible.builtin.shell: mongo --host mongodb-{{ENV}}.roboshopshopping < /tmp/mongodb-main/{{item}}.js
   loop:
       - catalogue
       - users
