@@ -46,7 +46,7 @@
 
 
 - name: loading catalogue data
-  ansible.builtin.shell: mongo --host mongodb-{{ENV}}.roboshopshopping < /tmp/mongodb-main/{{item}}.js
+  ansible.builtin.shell: mongo --host mongodb-dev.roboshopshopping < /tmp/mongodb-main/{{item}}.js
   loop:
       - catalogue
       - users
