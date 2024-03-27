@@ -17,7 +17,7 @@
     executable: pip3
 
 - name: Starting {{COMPONENT}}
-  ansible.builtin.systemd_service:
+  ansible.builtin.service:
     state: started
     name: mysqld
     enabled: yes
