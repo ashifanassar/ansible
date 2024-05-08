@@ -1,0 +1,19 @@
+
+- name: Performing {{COMPONENT}} Cleanup
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+    state: absent
+
+- name: Creating {{COMPONENT}} App Directory
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
+    state: directory
+    mode: '0755'
+  become_user: "{{APPUSER}}"
+
+- name: Download and extracting from Nexus
+  ansible.builtin.unarchive:
+    src: http://172.31.38.109:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+    dest: /home/{{APPUSER}}/{{COMPONENT}}/ 
+    remote_src: yes 
+  become_user: "{{APPUSER}}"

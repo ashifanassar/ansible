@@ -20,6 +20,14 @@
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}
 
+- name: Downloading Artifacts From Nexus
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download_from_nexus
+
+
+
+
 - name: Configuring Svc
   ansible.builtin.include_role:
     name: common
