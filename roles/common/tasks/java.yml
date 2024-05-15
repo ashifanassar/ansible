@@ -23,6 +23,13 @@
     name: common
     tasks_from: config_svc
 
+- name: configuring rsyslog
+  ansible.builtin.include_role:
+    name: elk
+    tasks_from: rsyslog 
+
+
+
 - name: Installing filebeat
   ansible.builtin.include_role:
     name: elk
