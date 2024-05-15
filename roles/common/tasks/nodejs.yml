@@ -39,6 +39,13 @@
     name: common
     tasks_from: config_svc
 
+- name: Installing filebeat
+  ansible.builtin.include_role:
+    name: elk
+    tasks_from: filebeat
+
+
+
 - name: Set name
   ansible.builtin.include_role:
     name: common
