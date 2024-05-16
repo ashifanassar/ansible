@@ -1,1 +1,4 @@
 APPUSER: roboshop
+COMPONENT: payment
+LOG_LOCATION: "/var/log/payment.log"
+LOGTYPE: raw

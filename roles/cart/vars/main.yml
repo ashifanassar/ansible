@@ -1,1 +1,4 @@
 APPUSER: roboshop
+COMPONENT: cart
+LOG_LOCATION: "/var/log/cart.log"
+LOGTYPE: json 

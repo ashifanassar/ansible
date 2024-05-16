@@ -1,0 +1,17 @@
+- name: Copying the logstash config 
+  ansible.builtin.template:
+    src: logstash.conf 
+    dest: /etc/logstash/conf.d/ogstash.conf 
+
+- name: Restart logstash                      # Keep in mind that logstash restart takes log of time, ensure 5044 comes up to mark it as up.
+  ansible.builtin.systemd:
+    name: logstash   
+    state: restarted
+    enabled: true 
+    daemon_reload: true 
+
+- name: Wait for port 5044 to come in to listening state 
+  ansible.builtin.wait_for:
+    port: 5044 
+    delay: 30  
+    timeout: 60
