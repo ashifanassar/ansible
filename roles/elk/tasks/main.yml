@@ -1,7 +1,7 @@
 - name: Copying the logstash config 
   ansible.builtin.template:
     src: logstash.conf 
-    dest: /etc/logstash/conf.d/ogstash.conf 
+    dest: /etc/logstash/conf.d/logstash.conf 
 
 - name: Restart logstash                      # Keep in mind that logstash restart takes log of time, ensure 5044 comes up to mark it as up.
   ansible.builtin.systemd:
