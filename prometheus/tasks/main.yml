@@ -1,0 +1,17 @@
+- name: Copying prometheus config 
+  ansible.builtin.template:
+    src: prometheus.yml
+    dest: /opt/prometheus/prometheus.yml
+
+- name: Restart Prometheus                      # Keep in mind that logstash restart takes log of time, ensure 5044 comes up to mark it as up.
+  ansible.builtin.systemd:
+    name: prometheus   
+    state: restarted
+    enabled: true 
+    daemon_reload: true 
+
+- name: Wait for port 5044 to come in to listening state 
+  ansible.builtin.wait_for:
+    port: 9090 
+    delay: 10 
+    timeout: 20
